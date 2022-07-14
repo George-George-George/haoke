@@ -1,30 +1,18 @@
 <template>
   <div>
     <!-- 头部 -->
-    <van-nav-bar title="账号登录" left-arrow @click="onClickLeft">
+    <van-nav-bar title="账号登录" left-arrow>
       <template #left>
-        <van-icon name="arrow-left" />
+        <van-icon name="arrow-left" @click="onClickLeft" />
       </template>
     </van-nav-bar>
     <!-- 输入框 -->
     <van-form @submit="onSubmit" class="form">
-      <van-field
-        v-model="account"
-        name="用户名"
-        placeholder="请输入账号"
-        :rules="[{ required: true, message: '请输入账号' }]"
-      />
-      <van-field
-        v-model="password"
-        type="password"
-        name="密码"
-        placeholder="请输入密码"
-        :rules="[{ required: true, message: '请输入密码' }]"
-      />
+      <van-field v-model="account" name="用户名" placeholder="请输入账号" :rules="[{ required: true, message: '请输入正确的账号' }]" />
+      <van-field v-model="password" type="password" name="密码" placeholder="请输入密码"
+        :rules="[{ required: true, message: '请输入密码' }]" />
       <div style="margin: 16px">
-        <van-button class="login-btn" block type="info" native-type="submit"
-          >登录</van-button
-        >
+        <van-button class="login-btn" block type="info" native-type="submit">登录</van-button>
       </div>
     </van-form>
     <!-- 注册栏 -->
@@ -58,6 +46,7 @@ export default {
         Toast.fail('登录失败')
       }
     }
+
   }
 }
 </script>
@@ -73,17 +62,20 @@ export default {
     color: #fff;
   }
 }
+
 .form {
   .login-btn {
     background-color: #21b97a;
     border: none;
   }
 }
+
 .register {
   margin-top: 25px;
   width: 100%;
   display: flex;
   justify-content: center;
+
   :deep(span) {
     font-size: 14px;
     color: #666;

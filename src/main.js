@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import Vant from 'vant'
 import 'vant/lib/index.css'
-import '@/assets/iconfont.css'
+// import '@/assets/iconfont.css'
 import 'amfe-flexible'
 
 Vue.config.productionTip = false
